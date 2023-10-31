@@ -1,6 +1,5 @@
 package co.edu.funlam.usecase.Activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -22,26 +21,26 @@ class MainActivity : AppCompatActivity() {
         val lista = this.findViewById<ListView>(R.id.ListaCandidatos)
 
 
-        val listaCiudades = mutableListOf<String>()
+        val listaElecciones = mutableListOf<String>()
         val Presidencia = "Elecciones Presidencia"
         val Alcaldia = "Elecciones Alcaldía"
         val Concejo = "Elecciones Concejo"
         val Asamblea = "Elecciones Asamblea"
 
 
-        listaCiudades.add(Presidencia)
-        listaCiudades.add(Alcaldia)
-        listaCiudades.add(Concejo)
-        listaCiudades.add(Asamblea)
+        listaElecciones.add(Presidencia)
+        listaElecciones.add(Alcaldia)
+        listaElecciones.add(Concejo)
+        listaElecciones.add(Asamblea)
 
 
         //adaptador
-        val adapatador = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaCiudades)
+        val adapatador = ArrayAdapter(this, android.R.layout.simple_list_item_1, listaElecciones)
         lista.adapter = adapatador
 
 
         lista.setOnItemClickListener { parent, view, position, id ->
-            val elementoSeleccionado = listaCiudades[position]
+            val elementoSeleccionado = listaElecciones[position]
 
             // Cambiar la estrategia en la Tableta de Votación según el elemento seleccionado
             when (elementoSeleccionado) {
